@@ -53,10 +53,12 @@ app.get('/hello', function(req, res, next) {
 app.post('/incoming', function(req, res, next) {
   var name = req.body.name;
   var text = req.body.text;
-  var message = name + " said " + text;
+  var message = name + " said " + text + " BADGES!!!! AAAAAWWWW YEAH!";
   console.log(message);
   if (name != NAME) {
-    botMessage(message);
+    if (message.indexOf("BADGES") >= 0) {
+      botMessage(message);
+    }
   }
   res.send(200, "hey, thanks");
 });
