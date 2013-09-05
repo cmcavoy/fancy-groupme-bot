@@ -58,6 +58,7 @@ app.post('/incoming', function(req, res, next) {
   if (name != NAME) {
     botMessage(message);
   }
+  res.send(200, "hey, thanks");
 });
 
 // send a message
