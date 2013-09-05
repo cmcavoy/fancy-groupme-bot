@@ -1,0 +1,23 @@
+{
+  "name": "groupme-bot",
+  "version": "0.0.0",
+  "description": "Let's make a robot",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Chris McAvoy <chris.mcavoy@gmail.com>",
+  "license": "BSD",
+  "dependencies": {
+    "async": "~0.2.9",
+    "underscore": "~1.5.1",
+    "express": "~3.3.8",
+    "request": "~2.27.0",
+    "memdown": "~0.3.0",
+    "levelup": "~0.15.0"
+  },
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.2.x"
+  }
+}
