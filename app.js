@@ -55,7 +55,7 @@ app.post('/incoming', function(req, res, next) {
   var text = req.body.text;
   //var message = name + " said " + text + " BADGES!!!! AAAAAWWWW YEAH!";
   message = "AWWW YEAH BADGES!";
-  console.log(message);
+  console.log(req.body);
   if (name != NAME) {
     if (text.indexOf("BADGES") >= 0) {
       botMessage(message);
