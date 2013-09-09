@@ -1,6 +1,6 @@
 {
   "name": "groupme-bot",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "Let's make a robot",
   "main": "app.js",
   "scripts": {
