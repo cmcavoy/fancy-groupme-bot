@@ -1,10 +1,10 @@
 {
-  "name": "groupme-bot",
+  "name": "fancy-groupme-bot",
   "version": "0.0.1",
-  "description": "Let's make a robot",
-  "main": "app.js",
+  "description": "Use the Groupme bot API",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=test ./node_modules/.bin/tap test/*.test.js"
   },
   "author": "Chris McAvoy <chris.mcavoy@gmail.com>",
   "license": "BSD",
@@ -14,7 +14,9 @@
     "express": "~3.3.8",
     "request": "~2.27.0",
     "memdown": "~0.3.0",
-    "levelup": "~0.15.0"
+    "levelup": "~0.15.0",
+    "nock": "~0.22.1",
+    "tap": "~0.4.4"
   },
   "engines": {
     "node": "0.10.x",
