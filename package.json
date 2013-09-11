@@ -4,7 +4,7 @@
   "description": "Use the Groupme bot API",
   "main": "index.js",
   "scripts": {
-    "test": "NODE_ENV=test ./node_modules/.bin/tap test/*.test.js"
+    "test": "NODE_ENV=test ./node_modules/.bin/tap --stderr test/*.test.js"
   },
   "author": "Chris McAvoy <chris.mcavoy@gmail.com>",
   "license": "BSD",
