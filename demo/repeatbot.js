@@ -1,4 +1,4 @@
-var bot = require('..');
+var bot = require('fancy-groupme-bot');
 var util = require('util');
 
 // local configuration read from env.
