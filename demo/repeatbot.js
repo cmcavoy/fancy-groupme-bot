@@ -1,18 +1,4 @@
-# Fancy Groupme Bot
-
-[Groupme Bot API](https://dev.groupme.com/tutorials/bots) wrapper.
-
-## Usage
-
-`npm install fancy-groupme-bot`
-
-## Example
-
-This bot connects to a room and repeats whatever was said.
-
-```
 var bot = require('fancy-groupme-bot');
-var util = require('util');
 
 // local configuration read from env.
 const TOKEN = process.env['TOKEN']; // your groupme api token
@@ -37,4 +23,3 @@ mybot.on('botMessage', function(b, message) {
 
 console.log("i am serving");
 mybot.serve(8000);
-```
