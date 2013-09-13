@@ -11,10 +11,10 @@
   "dependencies": {
     "async": "~0.2.9",
     "underscore": "~1.5.1",
-    "express": "~3.3.8",
     "request": "~2.27.0",
-    "memdown": "~0.3.0",
-    "levelup": "~0.15.0",
+    "formidable": "~1.0.14"
+  },
+  "devDependencies": {
     "nock": "~0.22.1",
     "tap": "~0.4.4"
   },
