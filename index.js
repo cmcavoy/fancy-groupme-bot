@@ -6,10 +6,15 @@ const util = require('util');
 const http = require('http');
 const formidable = require('formidable');
 
+// config { token:groupme token,
+//          group:the room to connect to,
+//          name: the bot name,
+//          url: optional callback,
+//          avatar_url: optional avatar image
 function Bot (config) {
   if (! (this instanceof Bot)) return new Bot(config);
   for (var key in config) if ( config.hasOwnProperty(key) )  this[key] = config[key];
-  if (this.token && this.group && this.name && this.url) {
+  if (this.token && this.group && this.name) {
     console.log("registering the bot");
     this.registerBot();
   } else {
@@ -123,7 +128,12 @@ Bot.prototype.registerBot = function() {
       var bot = {};
       bot.name = this.name;
       bot.group_id = this.group;
-      bot.callback_url = this.url + '/incoming';
+      if (this.url) {
+        bot.callback_url = this.url + '/incoming';
+      };
+      if (this.avatar_url) {
+        bot.avatar_url = this.avatar_url;
+      };
       var url = 'https://api.groupme.com/v3/bots?token=' + this.token;
       request( { url:url, method:'POST', body: JSON.stringify( { bot:bot } ) },
                function(error, response, body) {
