@@ -1,6 +1,6 @@
 {
   "name": "fancy-groupme-bot",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Use the Groupme bot API",
   "main": "index.js",
   "scripts": {
@@ -8,11 +8,15 @@
   },
   "author": "Chris McAvoy <chris.mcavoy@gmail.com>",
   "license": "BSD",
-  "repository" : {
+  "repository": {
     "type": "git",
-    "url":  "https://github.com/cmcavoy/fancy-groupme-bot.git"
+    "url": "https://github.com/cmcavoy/fancy-groupme-bot.git"
   },
-  "keywords":    ["bot","groupme","fancy"],
+  "keywords": [
+    "bot",
+    "groupme",
+    "fancy"
+  ],
   "dependencies": {
     "async": "~0.2.9",
     "underscore": "~1.5.1",
