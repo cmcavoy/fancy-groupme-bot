@@ -1,0 +1,9 @@
+language: node_js
+node_js:
+  - 0.10
+notifications:
+  email:
+    recipients:
+      - chris.mcavoy@gmail.com
+script:
+  - npm test
