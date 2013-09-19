@@ -12,7 +12,7 @@ First, add `fancy-groupme-bot` to your project.
 
 `npm install fancy-groupme-bot`
 
-Your bot needs a few things, a name, a room to connect to, a Groupme Token (you need to [https://dev.groupme.com/applications/new](create an application) to get a token), and an optional callback url where messages from the room will be passed. Pass the information to your bot,
+Your bot needs a few things, a name, a room to connect to, a Groupme Token (you need to [create an application](https://dev.groupme.com/applications/new) to get a token), and an optional callback url where messages from the room will be passed. The callback url is the server your bot creates with the `serve` method. If your bot is running at `http://yourserver.com:3000` that's the url you pass. Pass the information to your bot,
 
 ```
 var botConfig = { token:'my groupme token',
@@ -28,6 +28,8 @@ When you create the bot, it will register itself with Groupme. It also checks to
 Your bot fires two events, `botRegistered` and `botMessage`, they do pretty much what you'd expect them to do. Both events pass the bot itself as the first argument to the event handler. `botMessage` receives the message as the second argument. The message is an object with two properties `message.name` and `message.text`. `message.name` is the name of the user that sent the message, and `message.text` is the text of the message. In the current version of the `fancy-groupme-bot`, messages sent by your bot will also fire the `botMessage` event, so it's important to filter on `message.name` so you don't create some sort of wild endless loop. When a message comes from your bot, `message.name` will be set to whatever you set your config `name` to on bot instantiation.
 
 Your bot can send a message to the room it's in with the `message` method. The message will be sent to the room your bot is attached to. The `message` method takes a single argument, the message you want to send. It doesn't accept a callback - it's pretty much fire and forget.
+
+If you've configured your bot to receive messages, you'll want to start the bot server `myBot.server(port)` where `port` is the port you want the application to listen to. Groupme needs to access that address via the `url` callback you configured, so you'll need to run the bot in a publicly accessible place.
 
 ### bot.message
 ```
