@@ -1,6 +1,6 @@
 var test = require("tap").test;
 var bot = require("..");
-var nockGroupme = require('.').nockGroupme;
+var nockGroupme = require('./testUtils').nockGroupme;
 const CONFIG = require('./config');
 
 test("make a bot", function(t) {
