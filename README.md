@@ -2,7 +2,7 @@
 
 [Groupme Bot API](https://dev.groupme.com/tutorials/bots) wrapper. Bot making should be fun and quick and Node.
 
-[![Build Status](https://travis-ci.org/cmcavoy/fancy-groupme-bot.png)](https://travis-ci.org/cmcavoy/fancy-groupme-bot.png)
+[![Build Status](https://travis-ci.org/cmcavoy/fancy-groupme-bot.png)](https://travis-ci.org/cmcavoy/fancy-groupme-bot)
 
 [![npm stats](https://nodei.co/npm/fancy-groupme-bot.png?stars&downloads)](https://nodei.co/npm/fancy-groupme-bot.png?stars&downloads)
 
