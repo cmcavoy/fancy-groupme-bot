@@ -1,6 +1,6 @@
 {
   "name": "fancy-groupme-bot",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Use the Groupme bot API",
   "main": "index.js",
   "scripts": {
