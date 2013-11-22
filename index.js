@@ -30,8 +30,8 @@ Bot.prototype.serve = function(address) {
   var self = this;
   var server = http.createServer(function (request, response) {
     if (request.url == '/' && request.method == 'GET') {
-      response.writeHead(200, {"Content-Type": "text/plain"});
-      response.end("Hello World\n");
+      response.writeHead(200, {"Content-Type": "application/json"});
+      response.end(JSON.stringify({'name': self.config.name, 'group': self.config.group}));
     } else if (request.url == '/incoming' && request.method == 'POST') {
       var form = new formidable.IncomingForm();
       var messageFields = {};
