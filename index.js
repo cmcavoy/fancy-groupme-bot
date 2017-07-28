@@ -107,13 +107,18 @@ Bot.prototype.registerBot = function() {
     function(callback) {
       var self = this;
       this.allBots(function(bots) {
-        var botsToKill = [];
-        _.each(bots, function(bot) {
-          if (bot.group_id == self.group && bot.name == self.name) {
-            botsToKill.push(bot.bot_id);
-          }
+        var existingBots = bots.filter(function(bot) {
+          return bot.group_id == self.group && bot.name == self.name;
         });
-        callback(null, botsToKill);
+        var targetCallbackUrl = self.url ? self.url + '/incoming' : null;
+        if (existingBots.length === 1 
+          && existingBots[0].callback_url === targetCallbackUrl 
+          && existingBots[0].avatar_url == self.avatar_url) {
+            //bot already registered and has same settings.  Leave it as is and skip registration
+            self.botId = existingBots[0].bot_id;
+            return callback(null, []);
+        } 
+        callback(null, existingBots.map(function(bot) { return bot.bot_id; }));        
       });
     }.bind(this),
 
@@ -125,6 +130,11 @@ Bot.prototype.registerBot = function() {
 
     // register the new bot
     function(callback) {
+      if (this.botId) {
+        //bot exists already, skip registration
+        return callback(null, this.botId);
+      }
+
       var bot = {};
       bot.name = this.name;
       bot.group_id = this.group;
