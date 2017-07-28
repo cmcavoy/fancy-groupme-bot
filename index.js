@@ -149,6 +149,7 @@ Bot.prototype.registerBot = function() {
                function(error, response, body) {
                  if (!error) {
                    var parsedBody = JSON.parse(body).response.bot;
+                   this.emit('botRegistered', this); 
                    callback(null, parsedBody.bot_id);
                  } else {
                    callback(error);
@@ -158,7 +159,7 @@ Bot.prototype.registerBot = function() {
     }.bind(this)
   ], function (err, bot_id) {
     this.botId = bot_id;
-    this.emit('botRegistered', this);
+    this.emit('botReady', this);
   }.bind(this));
 };
 
